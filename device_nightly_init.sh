@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#Pull config from file.
-./kernel_config
+#Set the $DATE
+DATE=$(date +"%m-%d-%Y")
 
 #Announce the beginning of nightlies.
 ttytter -status="Nightlies for DEVICE have started, stay tuned"
