@@ -52,7 +52,7 @@ cd AnyKernel
 zip -r kernel_$DATE.zip system zImage META-INF 
 
 #come back to your OMFBOT scripts
-cd ~/OMFBOT
+cd ~/JDKBOT
 
 #Upload file to FTP
 ftp -n -v yourftpsite.com << EOT
