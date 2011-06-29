@@ -3,11 +3,13 @@
 #Pull config from file.
 ./kernel_config
 
+#Announce the beginning of nightlies.
+ttytter -status="Nightlies for DEVICE have started, stay tuned"
+
 #cd to kernel soure path, assuming your kernel soure dir is named src.
 cd ~/src
 
 #get anykernel files
-cd build
 git clone https://github.com/koush/AnyKernel.git
 
 #if you are devving for the thunderbolt, use this anykernel instead of the preceding version....NOTE: you need to comment out lines 10 and 11 and uncomment lines 14 for this next command to work.
@@ -52,6 +54,20 @@ zip -r kernel_$DATE.zip system zImage META-INF
 #come back to your OMFBOT scripts
 cd ~/OMFBOT
 
-#run the upload script
-./device_upload.sh
+#Upload file to FTP
+ftp -n -v yourftpsite.com << EOT
+ascii
+user yourusername yourpassword
+prompt
+cd remote/dir/you/wnt/to upload/your/kernel/to
+lcd ~/local/dir/your/kernel/zip/is 
+put kernel_$DATE.zip
+EOT
+
+#Announce new Nightly build.
+ttytter -status="New Device nightly available (insert link here)!"
+
+#Obviously
+exit
+
 
