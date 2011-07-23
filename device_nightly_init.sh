@@ -2,7 +2,7 @@
 
 #Set the config variables
 DATE=$(date +"%m-%d-%Y")
-DEVICE=S"Device you are going to compile for"
+DEVICE=$"Device you are going to compile for"
 
 #Announce the beginning of nightlies.
 ttytter -status="Nightlies for $DEVICE have started, stay tuned"
