@@ -60,7 +60,7 @@ user yourusername yourpassword
 prompt
 cd remote/dir/you/wnt/to upload/your/kernel/to
 lcd ~/local/dir/your/kernel/zip/is 
-put kernel_$DATE.zip
+put $PACKAGE
 EOT
 
 #Announce new Nightly build.
