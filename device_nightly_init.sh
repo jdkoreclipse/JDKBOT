@@ -1,10 +1,11 @@
 #!/bin/bash
 
-#Set the $DATE
+#Set the config variables
 DATE=$(date +"%m-%d-%Y")
+DEVICE=S"Device you are going to compile for"
 
 #Announce the beginning of nightlies.
-ttytter -status="Nightlies for DEVICE have started, stay tuned"
+ttytter -status="Nightlies for $DEVICE have started, stay tuned"
 
 #cd to kernel soure path, assuming your kernel soure dir is named src.
 cd ~/src
@@ -65,7 +66,7 @@ put kernel_$DATE.zip
 EOT
 
 #Announce new Nightly build.
-ttytter -status="New Device nightly available (insert link here)!"
+ttytter -status="New $DEVICE nightly available (insert link here)!"
 
 #Obviously
 exit
