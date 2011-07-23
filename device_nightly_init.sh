@@ -3,6 +3,7 @@
 #Set the config variables
 DATE=$(date +"%m-%d-%Y")
 DEVICE=$"Device you are going to compile for"
+PACKAGE=$"kernel_$DATE.zip" #this is the name of the zip 
 
 #Announce the beginning of nightlies.
 ttytter -status="Nightlies for $DEVICE have started, stay tuned"
@@ -50,7 +51,7 @@ cp ~/src/drivers/net/wireless/bcm4329/bcm4329.ko  ~/src/AnyKernel/system/lib/mod
 cd AnyKernel
 
 #zip the kernel up 
-zip -r kernel_$DATE.zip system zImage META-INF 
+zip -r $PACKAGE system zImage META-INF 
 
 #Upload file to FTP
 ftp -n -v yourftpsite.com << EOT
